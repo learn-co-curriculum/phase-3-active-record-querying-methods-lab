@@ -1,5 +1,3 @@
-# TV Land ActiveRecord Associations Lab
-
 ## Objectives
 
 1. Create a table using ActiveRecord
