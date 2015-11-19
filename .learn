@@ -1,6 +1,8 @@
-languages:
-  - ruby
 tags:
-  - ORM
-  - ActiveRecord
-  - associations
+  - active record
+  - migrations
+  - active record querying methods
+languages:
+  - Ruby
+resources:
+  - 3
