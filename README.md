@@ -1,29 +1,63 @@
 # TV Land ActiveRecord Associations Lab
 
 ## Objectives
-1. Creating and modifying tables using ActiveRecord
-2. Writing associations between models
+
+1. Create a table using ActiveRecord
+2. Use Active Record's querying methods.
 
 
-## spec/actor_spec.rb
+## Overview
 
-1. Build out the schema for the actors and characters table.
-2. Actors should have a `first_name` and a `last_name`.
-3. Characters should have a `name` and a `show_id`.
-4. Associate the Actor model with the Character and Show model. Do any of the models need a foreign key?
-5. Write the two methods `full_name` and `list_roles` that the spec requires. Write any helper methods that you need.
+In this lab, we'll be working in a TV show domain. We have a TV Show model, the `Show` class, and a shows table that you'll create in your database. 
 
-## spec/character_spec.rb
+You'll be required not only to write a migration that creates a shows table and gives the `Show` class certain attributes, but also to use Active Record's querying methods. 
 
-1. Add the column `catchphrase` to your character model.
-2. Define the method `say_that_thing_you_say` and make the spec pass.
+### Active Record Querying Methods
 
-## spec/show_spec.rb
- 
-1. Create the neccesary associations between shows, networks, and characters.
-2. Add all the attributes to the Show model that the spec requires.
+Active Record makes it easy to ask our database for certain information and datasets by providing a bunch of built-in methods for us to use to do just that. For example, we can request the sum of all of the values of a particular column with the `#sum` method like this:
 
-## Resources
-+ Rails Guide - [Active Record Associations](http://guides.rubyonrails.org/association_basics.html)
-+ Api dock - [Active Record Associations](http://apidock.com/rails/ActiveRecord/Associations)
-+ Rails Guide - [Active Record Migrations](http://edgeguides.rubyonrails.org/active_record_migrations.html)
+```ruby
+<class name>.sum(:<column_name>)
+```
+
+We can query our database based on certain conditions using the `#where` method. 
+
+Let's say we have a `Song` class and table and each song has rating, `number_of_stars` attribute. We could query for songs with more than 3 stars like this:
+
+```ruby
+Song.where("number_of_starts > ?", 3)
+```
+
+Let's look at one more example: Let's say we wanted to query our database for the lowest value in the `number_of_stars` column, i.e. the lowest rating that any song has:
+
+```ruby
+Song.minimum(:number_of_stars)
+```
+
+You'll be writing methods that *rely on Active Record methods like `#minimum`, `#sum` and `#where`* to get these tests passing. 
+
+Use the following resources to help you find the Active Record query methods that will help you pass these tests:
+
+* [Calcuations](http://guides.rubyonrails.org/active_record_querying.html#calculations)
+* [Ordering](http://guides.rubyonrails.org/active_record_querying.html#ordering)
+* [Conditions](http://guides.rubyonrails.org/active_record_querying.html#conditions)
+
+## Instructions
+
+### Migration
+
+* Create a file in the `db/migrate` folder called `001_create_shows.rb`. In this file, write the migration code to create a song table. The table should have name, network, day, network and rating columns. Name, network and day have a datatype of string and rating has a datatype of integer. 
+* Create a file, `song.rb`, in `app/models`. In this file you will define a `Song` class that inherits from Active Record Base. 
+* Now we need to create a second migration to add another column to our songs table. In the `db/migrate` folder, create another file, `002_add_season_to_shows.rb` and write a migration to add a column, season, to the shows table. The datatype of this column is string.  
+
+### Methods
+
+You'll be defining the following methods:
+
+* `#highest_rating`: this method should return the highest value in the ratings column. *hint:* if there is a `#minimum` Active Record method, might there be a `#maximum` method?
+* `#most_popular_show`: this method should return the show with the highest rating. *hint:* use the `#highest_rating` method as a helper method. 
+* `#lowest_rating`: returns the lowest value in the ratings column. 
+* `#least_popular_show`: returns the show with the lowest rating. 
+* `#ratings_sum`: returns the sum of all of the ratings. 
+* `#popular_shows`: returns an array of all of the shows that have a rating greater than `5`. *hint:* use the `#where` method Active Record method. 
+* `#shows_by_alphabetical_order`: returns an array of all of the shows sorted by alphabetical order according to their names. *hint:* use the `#order` Active Record method.
