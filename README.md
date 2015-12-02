@@ -59,3 +59,4 @@ You'll be defining the following methods:
 * `#ratings_sum`: returns the sum of all of the ratings. 
 * `#popular_shows`: returns an array of all of the shows that have a rating greater than `5`. *hint:* use the `#where` method Active Record method. 
 * `#shows_by_alphabetical_order`: returns an array of all of the shows sorted by alphabetical order according to their names. *hint:* use the `#order` Active Record method.
+<a href='https://learn.co/lessons/activerecord-tvshow' data-visibility='hidden'>View this lesson on Learn.co</a>
