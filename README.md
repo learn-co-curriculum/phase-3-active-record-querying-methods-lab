@@ -45,7 +45,7 @@ Use the following resources to help you find the Active Record query methods tha
 ### Migration
 
 * Create a file in the `db/migrate` folder called `001_create_shows.rb`. In this file, write the migration code to create a song table. The table should have name, network, day, network and rating columns. Name, network and day have a datatype of string and rating has a datatype of integer. 
-* Create a file, `song.rb`, in `app/models`. In this file you will define a `Song` class that inherits from Active Record Base. 
+* Create a file, `show.rb`, in `app/models`. In this file you will define a `Show` class that inherits from Active Record Base. 
 * Now we need to create a second migration to add another column to our songs table. In the `db/migrate` folder, create another file, `002_add_season_to_shows.rb` and write a migration to add a column, season, to the shows table. The datatype of this column is string.  
 
 ### Methods
