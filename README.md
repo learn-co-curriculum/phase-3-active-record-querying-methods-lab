@@ -23,7 +23,7 @@ We can query our database based on certain conditions using the `#where` method.
 Let's say we have a `Song` class and table and each song has rating, `number_of_stars` attribute. We could query for songs with more than 3 stars like this:
 
 ```ruby
-Song.where("number_of_starts > ?", 3)
+Song.where("number_of_stars > ?", 3)
 ```
 
 Let's look at one more example: Let's say we wanted to query our database for the lowest value in the `number_of_stars` column, i.e. the lowest rating that any song has:
