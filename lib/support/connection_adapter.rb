@@ -13,4 +13,3 @@ class ConnectionAdapter
     )
   end
 end
-  
