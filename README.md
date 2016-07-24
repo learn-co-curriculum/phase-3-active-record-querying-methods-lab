@@ -1,13 +1,13 @@
 ## Objectives
 
-1. Create a table using ActiveRecord
+1. Create a table using ActiveRecord.
 2. Use Active Record's querying methods.
 
 ## Overview
 
-In this lab, we'll be working in a TV show domain. We have a TV show model, the `Show` class, and a `shows` table that you'll create in your database. 
+In this lab, we'll be working in a TV show domain. We have a TV show model, the `Show` class, and a `shows` table that you'll create in your database.
 
-You'll be required not only to write a migration that creates a `shows` table and gives the `Show` class certain attributes, but also to use Active Record's querying methods. 
+You'll be required not only to write a migration that creates a `shows` table and gives the `Show` class certain attributes, but also to use Active Record's querying methods.
 
 ### Active Record Querying Methods
 
@@ -17,7 +17,7 @@ Active Record makes it easy to ask our database for certain information and data
 <class name>.sum(:<column_name>)
 ```
 
-We can query our database based on certain conditions using the `#where` method. 
+We can query our database based on certain conditions using the `#where` method.
 
 Let's say we have a `Song` class and table and each song has a `number_of_stars` rating attribute. We could query for songs with more than 3 stars like this:
 
@@ -31,7 +31,7 @@ Let's look at one more example: Let's say we want to query our database for the 
 Song.minimum(:number_of_stars)
 ```
 
-You'll be writing methods that *rely on Active Record methods like `#minimum`, `#sum`, and `#where`* to get these tests passing. 
+You'll be writing methods that *rely on Active Record methods like `#minimum`, `#sum`, and `#where`* to get these tests passing.
 
 Use the following resources to help you find the Active Record query methods that will help you pass these tests:
 
