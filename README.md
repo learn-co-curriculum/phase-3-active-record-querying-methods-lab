@@ -36,7 +36,7 @@ You'll be writing methods that *rely on Active Record methods like `#minimum`, `
 
 Use the following resources to help you find the Active Record query methods that will help you pass these tests:
 
-* [Calcuations](http://guides.rubyonrails.org/active_record_querying.html#calculations)
+* [Calculations](http://guides.rubyonrails.org/active_record_querying.html#calculations)
 * [Ordering](http://guides.rubyonrails.org/active_record_querying.html#ordering)
 * [Conditions](http://guides.rubyonrails.org/active_record_querying.html#conditions)
 
@@ -60,3 +60,5 @@ You'll be defining the following methods:
 * `#popular_shows`: returns an array of all of the shows that have a rating greater than `5`. *hint:* use the `#where` method Active Record method. 
 * `#shows_by_alphabetical_order`: returns an array of all of the shows sorted by alphabetical order according to their names. *hint:* use the `#order` Active Record method.
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/activerecord-tvshow' title='Objectives'>Objectives</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/activerecord-tvshow'>Advanced Finding Lab</a> on Learn.co and start learning to code for free.</p>
