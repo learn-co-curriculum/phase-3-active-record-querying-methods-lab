@@ -94,7 +94,7 @@ You'll be defining the following methods:
 - `popular_shows`: returns an array of all of the shows that have a rating
   greater than `5`. _hint_: use the `where` Active Record method.
 
-- `shows_by_alphabetical_order`: returns an array of all of the shows sorted by
+- `shows_by_alphabetical_order`: returns an array of all of the shows sorted in
   alphabetical order according to their names. _hint_: use the `order` Active
   Record method.
 
