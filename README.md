@@ -98,4 +98,4 @@ You'll be defining the following methods:
   alphabetical order according to their names. _hint_: use the `order` Active
   Record method.
 
-<p class='util--hide'>View <a href='https://learn.co/lessons/activerecord-tvshow'>Advanced Finding Lab</a> on Learn.co and start learning to code for free.</p>
+
