@@ -1,9 +1,11 @@
-## Objectives
+# Active Record Query Methods Lab
 
-1. Create a table using ActiveRecord.
-2. Use Active Record's querying methods.
+## Learning Goals
 
-## Overview
+- Create a table using ActiveRecord.
+- Use Active Record's querying methods.
+
+## Introduction
 
 In this lab, we'll be working in a TV show domain. We have a TV show model, the
 `Show` class, and a `shows` table that you'll create in your database.
