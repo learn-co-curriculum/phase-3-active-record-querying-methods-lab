@@ -1,9 +1,9 @@
-# Active Record Query Methods Lab
+# Active Record Querying Methods Lab
 
 ## Learning Goals
 
-- Create a table using ActiveRecord.
-- Use Active Record's querying methods.
+- Create a table using Active Record
+- Use Active Record's querying methods
 
 ## Introduction
 
