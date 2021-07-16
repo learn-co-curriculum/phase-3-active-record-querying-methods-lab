@@ -1,18 +1,19 @@
 require_relative 'spec_helper'
 
 describe Show do
-  let(:rick_and_morty) do
+  before do
     Show.create(name: "Rick and Morty", day: "Thursday", network: "Adult Swim", rating: 10)
-  end
-  let(:law_and_order) do
     Show.create(name: "Law & Order", day: "Monday", network: "NBC", rating: 7)
-  end
-  let(:the_cleveland_show) do
     Show.create(name: "The Cleveland Show", day: "Monday", network: "Fox", rating: 2)
-  end
-  let(:fear_the_walking_dead) do
     Show.create(name: "Fear the Walking Dead", day: "Sunday", network: "AMC", rating: 3)
   end
+
+  # Yes, .first through .fourth are all Active Record methods!
+  # .fifth and .forty_two also work (but not others)
+  let(:rick_and_morty) { Show.first }
+  let(:law_and_order) { Show.second }
+  let(:the_cleveland_show) { Show.third }
+  let(:fear_the_walking_dead) { Show.fourth }
 
   describe "attributes" do
     it "has data attributes given to it from a migration file" do
@@ -28,7 +29,8 @@ describe Show do
     end
 
     it "has a season column and attribute added from another migration file" do
-      expect(Dir.entries("/db/migrate")).to include("add_season_to_shows.rb")
+      file_path = File.join(__dir__, '../db/migrate')
+      expect(Dir.entries(file_path)).to include(a_string_including("add_season_to_shows.rb"))
     end
   end
 
