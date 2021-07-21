@@ -1,9 +1,11 @@
-## Objectives
+# Active Record Querying Methods Lab
 
-1. Create a table using ActiveRecord.
-2. Use Active Record's querying methods.
+## Learning Goals
 
-## Overview
+- Create a table using Active Record
+- Use Active Record's querying methods
+
+## Introduction
 
 In this lab, we'll be working in a TV show domain. We have a TV show model, the
 `Show` class, and a `shows` table that you'll create in your database.
@@ -20,7 +22,7 @@ request the sum of all of the values of a particular column with the `#sum`
 method:
 
 ```ruby
-<class name>.sum(:<column_name>)
+ClassName.sum(:column_name)
 ```
 
 We can query our database based on certain conditions using the `#where` method.
@@ -54,48 +56,46 @@ that will help you pass these tests:
 
 ### Migration
 
-- Run `mkdir db` and then `mkdir db/migrate` to create the `migrate` folder
-  within `db`. Then create a file in the `db/migrate` folder called
-  `001_create_shows.rb`. In this file, write the migration code to create a
-  `shows` table. The table should have `name`, `network`, `day`, and `rating`
-  columns. `name`, `network`, and `day` have a datatype of string, and `rating`
-  has a datatype of integer.
+Create a migration called `create_shows` using Rake.
 
-- Create an `app` folder with a `models` folder within it, and then create a
-  file, `show.rb`, in `app/models`. In this file, you will define a `Show` class
-  that inherits from `ActiveRecord::Base`.
+In the migration file, write the migration code to create a `shows` table. The
+table should have `name`, `network`, `day`, and `rating` columns. `name`,
+`network`, and `day` have a datatype of string, and `rating` has a datatype of
+integer.
 
-- Now we need to create a second migration to add another column to our `shows`
-  table. In the `db/migrate` folder, create another file,
-  `002_add_season_to_shows.rb`, and write a migration to add a column, `season`,
-  to the `shows` table. The datatype of this column is string.
+Create a file, `show.rb`, in `app/models`. In this file, you will define a
+`Show` class that inherits from `ActiveRecord::Base`.
 
-**Note**: This lab is using ActiveRecord 5.2. You will need to specify this
-version in your migrations by having your classes inherit from
-`ActiveRecord::Migration[5.2]`.
+Oops, we forgot a step in our first migration! Create a second migration to add
+another column to our `shows` table. Use Rake to generate a
+`add_season_to_shows` migration file. Write a migration to add a column,
+`season`, to the `shows` table. The datatype of this column is string.
 
 ### Methods
 
-You'll be defining the following methods:
+You'll be defining the following methods as **class methods** on the `Show` class:
 
-- `highest_rating`: this method should return the highest value in the ratings
-  column. _hint_: if there is a `minimum` Active Record method, might there be a
-  `maximum` method?
+- `.highest_rating`: This method should return the highest value in the ratings
+  column. **Hint**: if there is a `.minimum` Active Record method, might there be a
+  `.maximum` method?
 
-- `most_popular_show`: this method should return the show with the highest
-  rating. _hint_: use the `highest_rating` method as a helper method.
+- `.most_popular_show`: Returns the **show** with the highest rating.
 
-- `lowest_rating`: returns the lowest value in the ratings column.
+- `.lowest_rating`: Returns the **lowest value** in the ratings column.
 
-- `least_popular_show`: returns the show with the lowest rating.
+- `.least_popular_show`: Returns the **show** with the lowest rating.
 
-- `ratings_sum`: returns the sum of all of the ratings.
+- `.ratings_sum`: Returns the sum of all of the ratings.
 
-- `popular_shows`: returns an array of all of the shows that have a rating
-  greater than `5`. _hint_: use the `where` Active Record method.
+- `.popular_shows`: Returns a list of all of the shows that have a rating
+  greater than 5. **Hint**: use the `.where` Active Record method.
 
-- `shows_by_alphabetical_order`: returns an array of all of the shows sorted by
-  alphabetical order according to their names. _hint_: use the `order` Active
+- `.shows_by_alphabetical_order`: Returns an array of all of the shows sorted in
+  alphabetical order according to their names. **Hint**: use the `.order` Active
   Record method.
 
-<p class='util--hide'>View <a href='https://learn.co/lessons/activerecord-tvshow'>Advanced Finding Lab</a> on Learn.co and start learning to code for free.</p>
+## Resources
+
+- [Calculations](http://guides.rubyonrails.org/active_record_querying.html#calculations)
+- [Ordering](http://guides.rubyonrails.org/active_record_querying.html#ordering)
+- [Conditions](http://guides.rubyonrails.org/active_record_querying.html#conditions)
