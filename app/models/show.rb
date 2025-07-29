@@ -13,10 +13,14 @@ class Show < ActiveRecord::Base
     Show.minimum(:rating)
   end
 
-    def self.least_popular_show
+  def self.least_popular_show
     Show
     .order(:rating)
     .first
+  end
+
+  def self.ratings_sum
+    Show.sum(:rating)
   end
   
 end
