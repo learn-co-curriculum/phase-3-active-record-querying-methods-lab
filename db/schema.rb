@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_29_123227) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_29_123638) do
   create_table "shows", force: :cascade do |t|
     t.string "name"
     t.string "network"
     t.string "day"
     t.integer "rating"
+    t.string "season"
   end
 end
